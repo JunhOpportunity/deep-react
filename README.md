@@ -42,3 +42,5 @@
 
 ### [탈출용 해치](https://github.com/JunhOpportunity/deep-react/tree/main/%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84%20%EB%AC%B8%EC%84%9C/%ED%83%88%EC%B6%9C%EC%9A%A9%20%ED%95%B4%EC%B9%98)
 - [useRef](https://github.com/JunhOpportunity/deep-react/blob/main/%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84%20%EB%AC%B8%EC%84%9C/%ED%83%88%EC%B6%9C%EC%9A%A9%20%ED%95%B4%EC%B9%98/1-useref.md)
+- useEffect
+> useEffect 내부의 코드는 마운트 되었을 때 실행되고, useEffect 내부의 return은 마운트가 해제될 때 실행된다.
