@@ -8,6 +8,8 @@
 - React 에서 렌더링 도중에 DOM 수정과 같은 사이드 이펙트를 포함해서는 안된다.
 ex) useRef를 사용해 직접 영상을 실행시키거나 정지시키는 것
 - 💡 Effect 에서 데이터를 가져오는 것은 좋지 않다. 캐시를 사용하거나 React Query, useSWR 같은 것을 사용하자.
+- Fetch 함수는 외부 세계와 소통을 하는 함수이기 때문에 부수 효과(=Side Effect)를 일으키는 장소로 useEffect 를 제공하고 있다.
+- setState도 부수 효과를 일으키는 함수이다.
 
 ## useEffect를 사용하는 방법
 
