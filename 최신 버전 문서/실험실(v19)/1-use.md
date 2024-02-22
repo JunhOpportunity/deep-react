@@ -61,29 +61,60 @@ import { use } from 'react';
 const value = use(resource)
 ```
 
-여기서 `resource`는 `Promise` 또는 `Context`가 될 수 있습니다.
+### Promise를 use에 호출하는 경우
 
 ```jsx
+// App.js
+export default function App() {
+  const promiseData = fetchPromiseData();
+  return (
+    <Suspense fallback={<h1>로딩중...</h1>}>
+      <Test promiseData={promiseData} />
+    </Suspense>
+  );
+}
+
+// Test.js
 import { use } from 'react';
 
-function MessageComponent({ messagePromise }) {
-  const message = use(messagePromise);
-  const theme = use(ThemeContext);
+export default function Test({ promiseData }) {
+  const data = use(promiseData);
+  return <h1>{data}</h1>;
+}
+```
+
+Promise 형태의 data 값이 완전히 받아와 질 때까지 Suspense의 fallback이 표시됩니다.
+
+### Context API를 호출하는 경우
+
+```jsx
+
+// App.js
+const ThemeContext = createContext(null);
+
+export default function App() {
+  return (
+    <ThemeContext.Provider value="dark">
+      <Test />
+    </ThemeContext.Provider>
+  )
+}
+
+// Test.js
+export default function Test() {
+	const theme = use(ThemeContext);
+  return (
+    <div>{theme}</div>
+  );
+}
 ```
 
 ## 주의 사항
 
 - `use` 역시 컴포넌트 또는 커스텀 훅 내부에서만 사용이 가능합니다.
-- 여기서 정말 주의해야 할 것은 클로저 내부에서 호출하는 것도 불가능하기 때문에 `map`, `filter`와 같은 프로토타입 함수 내에서 사용이 불가능 하다는 것입니다.
+- 여기서 정말 주의해야 할 것은 클로저 함수에서 `use`를 호출하면 안된다는 제약이 존재한다는 것입니다. 따라서 `map`, `filter`, `reduce` 와 같은 프로토타입 함수 중 클로저 함수를 내에서 `use` 를 사용하는 것이 불가능 합니다. 사실 다른 훅들 같은 경우에는 따로 에러가 발생하면서 제대로 동작하지 않지만 `use` 의 경우에는 그렇지 않기 때문에 사용할 때 굉장히 조심스럽게 사용해야 합니다.
 - 리엑트 공식 문서에서는 서버 컴포넌트에서 데이터를 가져올 때 `async-await` 사용을 권장하고 있습니다. 즉, 클라이언트 컴포넌트에서만 `use`를 사용하라는 것으로 이해할 수 있습니다.
 - `use` 훅은 `try-catch` 문 내에서 호출할 수 없기 때문에 `.catch` 메서드를 사용하거나 ErrorBoundary로 감싸주어야 합니다.
-
-## 활용 방법
-
-### Context API와 함께 사용하기
-
-useContext는 컴포넌트의 최상위에서 호출해야 하는데 use로 전달해서 호출하게 된다면 조건부로 호출할 수 있어 더 유연하게 Context API를 사용할 수 있다.
-
 
 
 ## Reference
