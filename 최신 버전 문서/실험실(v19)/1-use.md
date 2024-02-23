@@ -43,13 +43,23 @@ const { data, error, loading } = useQuery({
 
 컴포넌트 내에서  Promise 또는 Context와 같은 리소스 값을 읽을 때 사용하는 React의 Hook입니다.
 
-다른 React Hook들과는 달리 use는 조건문과 루프 내에서 호출할 수 있기 때문에 조금 더 자유로운 사용이 가능하다는 장점이 존재합니다.
+여기서 정말 중요한 것은 ‘컴포넌트 내에서’ 라는 것입니다.
+
+왜냐하면 기존에 컴포넌트 내에서 데이터를 비동기적으로 호출하기 위해서는 특정 훅을 사용하거나 추가적인 코드를 작성해야만 했기 때문입니다.
+
+게다가 React 컴포넌트는 동기적으로 렌더링되기 때문에 컴포넌트 자체를 async로 만드는 것은 불가능했습니다.
+
+그런데 use 를 사용해 컴포넌트 자체를 async로 만들지 않고 특정 훅이나 추가적인 코드를 작성하지 않아도 바로 비동기적으로 데이터를 가져올 수 있게 되었다는 뜻입니다.
+
+게다가 다른 React Hook들과는 달리 use는 조건문과 루프 내에서 호출할 수 있기 때문에 조금 더 자유로운 사용이 가능하다는 장점이 존재합니다.
 
 use Hook이 반환하는 값을 확인해보면 한가지 특이한 점을 찾을 수 있습니다.
 
 요청에 대한 결과 데이터만 반환하고 error와 loading에 대해서는 따로 반환하지 않는다는 점입니다.
 
-이는 Suspense와 ErrorBoundary로 감싸주면 Promise가 해결될 때까지 Suspense의 fallback이 표시되고 에러가 발생한 경우 ErrorBoundary의 fallback이 표시됩니다.
+이때 반환되는 데이터는 Promise 형태이기 때문에 Suspense를 트리거 할 수 있습니다.
+
+따라서 Suspense와 ErrorBoundary로 감싸주면 Promise가 해결될 때까지 Suspense의 fallback이 표시되고 에러가 발생한 경우 ErrorBoundary의 fallback이 표시됩니다.
 
 ## 사용 방법
 
