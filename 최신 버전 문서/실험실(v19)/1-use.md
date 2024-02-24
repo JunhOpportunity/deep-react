@@ -128,7 +128,9 @@ export default function Test() {
 
 
 ## Reference
-- https://www.youtube.com/watch?v=zdNF9FJWJ8o
-- https://www.youtube.com/watch?v=Zrsf8_YWcH8
-- https://www.youtube.com/watch?v=Hd1JeePasuw
-- https://react.dev/reference/react/use#usage
+[FEConf 2023 - use 훅이 바꿀 리액트 비동기 처리의 미래 맛보기](https://www.youtube.com/watch?v=Hd1JeePasuw)
+[React 공식 문서 - use hook](https://react.dev/reference/react/use#usage)
+[React RFC 문서 - 0000-first-class-support-for-promises](https://github.com/acdlite/rfcs/blob/first-class-promises/text/0000-first-class-support-for-promises.md)
+[React RFC PR - 0000-first-class-support-for-promises](https://github.com/reactjs/rfcs/pull/229)
+[Youtube - This New React Hook Breaks All The Rules And I Love It](https://www.youtube.com/watch?v=zdNF9FJWJ8o)https://www.youtube.com/watch?v=zdNF9FJWJ8o
+[Youtube - REACT 19 IS AWESOME](https://www.youtube.com/watch?v=Zrsf8_YWcH8)https://www.youtube.com/watch?v=Zrsf8_YWcH8
