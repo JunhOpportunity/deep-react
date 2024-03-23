@@ -5,6 +5,11 @@
 ## 실험실(v19 버전에서 출시 예정인 훅이나 아직 연구중인 것들)
 - [use hook](https://github.com/JunhOpportunity/deep-react/blob/main/%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84%20%EB%AC%B8%EC%84%9C/%EC%8B%A4%ED%97%98%EC%8B%A4(v19)/1-use.md)
 > 컴포넌트 내에서  Promise 또는 Context와 같은 리소스 값을 읽을 때 사용하는 React의 Hook
+>
+
+## RFC 문서
+- [0000-first-class-support-for-promises](https://velog.io/@junhopportunity/%EC%B6%9C%EC%8B%9C-%EC%98%88%EC%A0%95%EC%9D%B8-React%EC%9D%98-use-hook-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0)
+> use hook 관련 정보들을 담은 출시 전 문서
 
 ## 최신 버전 (목차와 요약)
 ### [기본 개념](https://github.com/JunhOpportunity/deep-react/tree/main/%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84%20%EB%AC%B8%EC%84%9C/%EA%B8%B0%EB%B3%B8%20%EA%B0%9C%EB%85%90)
