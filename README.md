@@ -2,6 +2,9 @@
 👀 React의 공식 문서를 뜯어보며 새롭게 깨달은 내용들을 정리해보자
 🤔 11월 둘째주까지 공식 문서에 대한 1차 정리를 완료한 뒤에 복습을 진행하며 내용을 이해하기 쉽게 다듬는 과정을 거칠 예정입니다.
 
+## Deep Deep dive
+- [Fiber란 무엇인가?](https://github.com/JunhOpportunity/deep-react/tree/main/Deep%20Deep%20Dive/Fiber)
+
 ## 실험실(v19 버전에서 출시 예정인 훅이나 아직 연구중인 것들)
 - [use hook](https://github.com/JunhOpportunity/deep-react/blob/main/%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84%20%EB%AC%B8%EC%84%9C/%EC%8B%A4%ED%97%98%EC%8B%A4(v19)/1-use.md)
 > 컴포넌트 내에서  Promise 또는 Context와 같은 리소스 값을 읽을 때 사용하는 React의 Hook
