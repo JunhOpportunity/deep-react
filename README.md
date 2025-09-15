@@ -4,6 +4,8 @@
 
 ## Deep Deep dive
 - [Fiber란 무엇인가?](https://github.com/JunhOpportunity/deep-react/tree/main/Deep%20Deep%20Dive/Fiber)
+- [Virtual DOM](https://github.com/JunhOpportunity/deep-react/tree/main/Deep%20Deep%20Dive/VirtualDOM)
+- [useState와 Linked List](https://github.com/JunhOpportunity/deep-react/tree/main/Deep%20Deep%20Dive/useState-LinkedList)
 
 ## 실험실(v19 버전에서 출시 예정인 훅이나 아직 연구중인 것들)
 - [use hook](https://github.com/JunhOpportunity/deep-react/blob/main/%EC%B5%9C%EC%8B%A0%20%EB%B2%84%EC%A0%84%20%EB%AC%B8%EC%84%9C/%EC%8B%A4%ED%97%98%EC%8B%A4(v19)/1-use.md)
