@@ -48,3 +48,31 @@ const queue = (hook.queue = {
 	// ...
 })
 ```
+
+## 🤚dispatchAction 함수가 하는 일
+
+1. dispatchAction 함수는 update 객체를 생성한다
+2. 이후에 update 객체는 queue에 저장된다
+3. 불필요한 렌더링이 발생하지 않도록 최적화한다
+4. update 를 적용하기 위해서는 Work 를 scheduler 에 예약해야 한다
+⇒ 여기서 Work란? VDOM을 재조정하는 단계에서 배운 내용이다.
+즉, WORK는 reconciler가 컴포넌트의 변경 내용을 DOM에 적용하기 위해 수행하는 일을 말한다.
+
+idle 상태 : 어떠한 일도 하지 않는 기본 상태
+
+### update 객체
+
+```jsx
+const udate: Update<S, A> = {
+	expirationTime,
+	action,
+	next,
+	eagerReducer, 
+	eagerState,
+}
+```
+
+- expirationTime : Work 상태에 따른 값을 저장하는 부분
+- action : setState()의 인자로 들어가는 값
+- next : update 객체는 Linked List 로 저장되기 때문에 다음 노드를 가리키고 있는 값
+- eagerReducer, eagerState : 불필요한 렌더링이 발생하지 않도록 최적화 하는 단계와 관련 있음
